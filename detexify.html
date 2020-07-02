@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="theme-dark">
+  <head>
+    <meta charset="UTF-8">
+    <title>Detexify</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="assets/css/f7.min.css" />
+    <link rel="stylesheet" href="assets/css/symbols.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="view view-main view-init safe-areas">
+        <div class="page">
+          <div class="left-cont">
+            <div id="drawing"></div>
+            <a class="link icon-only"id="clear">
+            <i class="material-icons md-only clear-icon">backspace</i>
+            </a>
+          </div>
+          <div class="right-cont">
+            <div class="tool-bar">
+              <div class="draggable-area"></div>
+              <div class="tool-bar-icons">
+                <a class="link icon-only tooltip-init" data-tooltip="Developer's Website" id="launch">
+                	<i class="material-icons md-only">launch</i>
+                </a>
+                <a class="link icon-only" id="minimize">
+                	<i class="material-icons md-only">minimize</i>
+                </a>
+                <a class="link icon-only" id="close">
+                	<i class="material-icons md-only">close</i>
+                </a>
+              </div>
+            </div>
+            <div class="animate__animated animate__faster" id="text">
+              <div class="text-cont">
+                <span>
+                  Draw on the left side and then select a symbol on the right side to copy the <div class="card">LATEX</div><span class="card-placeholder"></span> command to your clipboard.
+                </span>
+              </div>
+            </div>
+            <div class="animate__animated animate__faster" id="list">
+              <div class="list-cont">
+                <div class="list media-list skeleton-text skeleton-effect-blink disabled">
+                  <ul>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+										<li class="item-content item-link" onclick="copy(this.dataset.copy);"><div class="item-media"><div class="not-skeleton-block latex-symbol"><img class="symbol" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" draggable="false"/></div></div><div class="item-inner"><div class="item-title-row"><div class="card item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="item-subtitle">mathmode</div><a class="link icon-only tooltip-init list-info-icons" data-tooltip="\usepackage{}"><i class="material-icons md-only" onclick="copy(this.parentElement.dataset.copy, true);">info</i></a></div></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="text" value="\usepackage{}" type="hidden">
+    <script src="assets/js/f7.min.js"></script>
+    <script src="assets/js/svg.min.js"></script>
+    <script src="assets/js/svg.draw.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

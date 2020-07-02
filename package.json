@@ -1,0 +1,26 @@
+{
+  "name": "Detexify",
+  "version": "1.0.0",
+  "description": "Windows Client for Daniel Kirsch's Detexify script. Find the closest LaTeX command, package and mode for any symbols you draw.",
+  "main": "detexify.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Chirag Galaiya",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0"
+  },
+  "build": {
+    "appId": "ga.chiraggalaiya.detexify",
+    "productName": "Detexify",
+    "win": {
+      "publisherName": "Chirag Galaiya",
+      "target": "portable",
+      "icon": "assets/images/icon.ico"
+    }
+  }
+}
